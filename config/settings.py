@@ -56,7 +56,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "config.urls"
 
-#integra com o sistema de auth padrao do Django
+# integra com o sistema de auth padrao do Django
 AUTH_USER_MODEL = 'cadastros.Usuario'
 AUTHENTICATION_BACKENDS = [
     'cadastros.backends.EmailBackend', #backend de autenticacao personalizado
