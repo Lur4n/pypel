@@ -5,7 +5,7 @@ from cadastros.models import Departamento, Perfil
 class Command(BaseCommand):
     help = 'Inicializa o sistema com dados padrão'
 
-    def handle(self, *args, **kwargs):
+    def handle(self, *args, **options):
         #cria um departamento geral
         departamento, created = Departamento.objects.get_or_create(nome='Geral', sigla='GERAL')
         if created:
@@ -26,7 +26,7 @@ class Command(BaseCommand):
 
         #cria o usuario administrador principal do sistema
         User = get_user_model()
-        if not User.objects.filter(email='adm@gmail.com').exists:
+        if not User.objects.filter(email='adm@gmail.com').exists():
             usuario = User(
                 email = 'adm@gmail.com',
                 nome = 'Administrador',
