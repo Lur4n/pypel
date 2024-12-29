@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+
 import os
 from django.contrib.messages import constants as messages
 from pathlib import Path
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-!7d29kld)%1$15$2cd$xoryrp&2@3fpte)q9l7w3%!*q0a=pom"
+SECRET_KEY = "django-insecure-qk1k%1_f604q40uifu=8825p7&gi^2vugoedco)48mnn17r44_"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -57,12 +58,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "config.urls"
 
-# integra com o sistema de auth padrao do Django
-AUTH_USER_MODEL = 'cadastros.Usuario'
+#integra com o sistema de auth padrao do Django
+AUTH_USER_MODEL = 'cadastros.Usuario' 
 AUTHENTICATION_BACKENDS = [
-    'cadastros.backends.EmailBackend', #backend de autenticacao personalizado
-    'django.contrib.auth.backends.ModelBackend', #backend de autenticacao padrao
+    'cadastros.backends.EmailBackend',  #backend de autenticacao personalizado
+    'django.contrib.auth.backends.ModelBackend',  #backend de autenticacao padrao
 ]
+
 
 TEMPLATES = [
     {
@@ -97,13 +99,15 @@ DATABASES = {
         'NAME': 'bd_pypel',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'localhost',
+        'HOST': 'localhost', 
         'PORT': '5432',
+        'OPTIONS': {
+            'client_encoding': 'utf-8',
+        },
     }
 }
 
 # Settings for messages
-
 MESSAGE_TAGS = {
     messages.DEBUG: 'debug',
     messages.INFO: 'info',
@@ -111,7 +115,6 @@ MESSAGE_TAGS = {
     messages.WARNING: 'warning',
     messages.ERROR: 'danger',
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

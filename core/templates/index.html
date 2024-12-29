@@ -90,9 +90,8 @@
     </div>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             toastr.options = {
-                "closeButton": true,
                 "debug": false,
                 "newestOnTop": true,
                 "progressBar": true,
@@ -108,7 +107,7 @@
                 "showMethod": "fadeIn",
                 "hideMethod": "fadeOut"
             };
-
+    
             {% if messages %}
                 {% for message in messages %}
                     {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
@@ -122,7 +121,7 @@
                     {% endif %}
                 {% endfor %}
             {% endif %}
-
+    
             //sobre
             $('#btnSobre').click(function() {
                 $('#jnlSobre').modal('show');
