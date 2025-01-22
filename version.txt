@@ -1,0 +1,29 @@
+PYPEL - SISTEMA DE GERENCIAMENTO DE PAPELARIA
+VERSÃO 0.01 - sistema de autenticação concluído - 22/01/2025
+
+https://github.com/lur4n/pypel
+Luan Carlos dos Santos
+luancarlos1201@gmail.com
+
+1. ABNT 
+SANTOS, Luan C. PYPEL - Sistema de Gereenciamento de Papelaria.
+[S.l.]: [s.n.], 2025. Disponível em: https://github.com/lur4n/pypel
+Acesso em: [data de acesso]
+
+2. IEEE
+L. C. SANTOS, "PYPEL - Sistema de Gerenciamento de Papelaria." [online].
+Disponível em: https://github.com/lur4n/pypel
+Acesso em: [dia, mes, ano]
+
+3. APA
+Santos, L. C. (2025). PYPEL - Sistema de Gereenciamento de Papelaria.
+Acesso em: [data de acesso], de https://github.com/lur4n/pypel
+
+4. BibTeX
+@misc{santos2025pypel,
+   author = {Santos, Luan Carlos},
+   title = {PYPEL - Sistema de Gerenciamento de Papelaria},
+   year = {2025},
+   howpublished = {\url{https://github.com/lur4n/pypel}},
+   note = {Acessadp em: data de Acesso}
+}

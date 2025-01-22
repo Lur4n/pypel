@@ -87,6 +87,14 @@ LOGIN_REDIRECT_URL = 'core:main'
 LOGOUT_REDIRECT_URL = 'autenticacao:login'
 LOGIN_URL = 'autenticacao:login'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'luancarlos1201@gmail.com'
+EMAIL_HOST_PASSWORD = '@Luan2794'
+EMAIL_PORT = 587
+EMAIL_USER_TLS = True
+
+
 WSGI_APPLICATION = "config.wsgi.application"
 
 
