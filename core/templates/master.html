@@ -23,23 +23,20 @@
     <div class="flex-wrapper">
         <header id="menu_navegacao">
             <nav class="navbar navbar-expand-sm navbar-light bg-light">
-                {% if request.session.perfil_atual == 'Administrador' or request.session.perfil_atual == 'Estoquista' or request.session.perfil_atual == 'Vendedor' %}
                 <a class="navbar-brand" href="{% url 'core:main' %}">HOME</a>
+                {% if request.session.perfil_atual == 'Administrador'%}
                 {% endif %}
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
-                        {% if request.session.perfil_atual == 'Administrador' %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarMenuExemplo" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                MENU EXEMPLO
+                                Arquivos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarMenuExemplo">
-                                <a class="dropdown-item" href="#">ITEM 1</a>
-                                <a class="dropdown-item" href="#">ITEM 2</a>
-                                <a class="dropdown-item" href="#">ITEM 3</a>
+                                <a class="dropdown-item" href="#">Meus dados</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{% url 'autenticacao:logout' %}">
                                     <img src="{% static 'img/my_logout.png' %}" width="20px" alt="Logout">
@@ -47,9 +44,52 @@
                                 </a>
                             </div>
                         </li>
+                        {% if request.session.perfil_atual == 'Administrador' %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarMenuExemplo" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pessoal
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarMenuExemplo">
+                                <a class="dropdown-item" href="{% url 'cadastros:departamentos'%}">Departamentos</a>
+                                <a class="dropdown-item" href="#"><img src="{% static 'img/users.png' %}" width="20px"> Usuários</a>
+                            </div>
+                        </li>
+                        
+                        {% if request.session.perfil_atual == 'Estoquista' or request.session.perfil_atual == 'Administrador' %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarMenuExemplo" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Estoquista
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarMenuExemplo">
+                                    <a class="dropdown-item" href="#">Produtos</a>
+                                </div>
+                            </li>
+                        {% endif %}
+                            
+                        {% if request.session.perfil_atual == 'Vendedor' or request.session.perfil_atual == 'Administrador' %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarMenuExemplo" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Vendas
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarMenuExemplo">
+                                    <a class="dropdown-item" href="#">Venda</a>
+                                </div>
+                            </li>
                         {% endif %}
 
-                    </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarMenuExemplo" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Relatorios
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarMenuExemplo">
+                                <a class="dropdown-item" href="#">Lista de Usuários</a>
+                                <a class="dropdown-item" href="#">Balanço</a>
+                                <a class="dropdown-item" href="#">Contabilidade</a>
+                            </div>
+                        </li>
+                        {% endif %}
+
+                        </ul>
                 </div>
             </nav>
         </header>
